@@ -5,3 +5,4 @@ composer.lock
 xdebug
 vendor
 .idea
+config.PRIVATE.php
