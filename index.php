@@ -11,14 +11,18 @@ use BattleriteAPIToken\BattleriteAPIToken;
 /*$webToken->setToken('set token.');*/ // If you want to set a key manually.
 /*var_dump($webToken);*/
 
-$webAPI = new BattleriteWebApi(BattleriteAPIToken::init());
+$config = include('config.php');
+$token = BattleriteAPIToken::init();
+$token->setToken($config->token);
+$webAPI = new BattleriteWebApi($token);
 
 $webAPI->getFullStatus();
 /*echo $webAPI->getReleasedAt();
 echo "<br/> <br/> " . $webAPI->getVersion();*/
 
 /*echo "<br/> <br/> " . $webAPI->getRandomMatch('');*/
-$webAPI->getPlayerByName(['ryanmorris']);
+$playerName = $config->playername;
+$webAPI->getPlayerByName([$playerName]);
 
 echo "<br/> <br/>";
 

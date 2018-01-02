@@ -2,3 +2,4 @@
 xdebug
 vendor
 .idea
+config.PRIVATE.php
